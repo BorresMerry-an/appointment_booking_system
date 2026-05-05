@@ -6,6 +6,7 @@ import compression from 'compression';
 import rateLimit from 'express-rate-limit';
 import swaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
+import type { CorsOptions } from 'cors';
 
 import { swaggerSpec } from './config/swagger';
 import { errorHandler } from './middleware/errorHandler';
@@ -25,16 +26,30 @@ const PORT = process.env.PORT || 3000;
 // ─── Security Middleware ────────────────────────────────
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 
-app.use(cors({
-  origin: [
-    process.env.FRONTEND_URL || 'http://localhost:4200',
-    'http://localhost:4200',
-    'http://localhost:5173',
-  ],
+const defaultOrigins = ['http://localhost:4200', 'http://localhost:5173'];
+const envOrigins = [
+  process.env.FRONTEND_URL,
+  ...(process.env.FRONTEND_URLS?.split(',') || []),
+]
+  .map((origin) => origin?.trim())
+  .filter((origin): origin is string => Boolean(origin));
+
+const allowedOrigins = new Set([...defaultOrigins, ...envOrigins]);
+
+const corsOptions: CorsOptions = {
+  origin: (origin, callback) => {
+    // Allow server-to-server tools/postman requests with no browser origin.
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.has(origin)) return callback(null, true);
+    if (origin.endsWith('.vercel.app')) return callback(null, true);
+    return callback(new Error(`CORS blocked for origin: ${origin}`));
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+};
+
+app.use(cors(corsOptions));
 
 // ─── Rate Limiting ──────────────────────────────────────
 const limiter = rateLimit({

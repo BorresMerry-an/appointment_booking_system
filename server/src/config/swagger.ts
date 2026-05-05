@@ -11,7 +11,7 @@ const options: swaggerJsdoc.Options = {
     },
     servers: [
       { url: 'http://localhost:3000/api', description: 'Development' },
-      { url: 'https://your-render-app.onrender.com/api', description: 'Production' },
+      { url: 'https://appointment-booking-system-1-pf41.onrender.com/api', description: 'Production' },
     ],
     components: {
       securitySchemes: {
