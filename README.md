@@ -331,7 +331,17 @@ Password: Admin123!
 
 ## 📸 Screenshots
 
-> See the `screenshots/` folder for UI screenshots and API testing results (Postman).
+> Add screenshots to the `/screenshots` folder and reference them below.
+
+## 📸 Screenshots
+
+> UI screenshots and API testing results (Postman) can be added to a `screenshots/` folder in the repository.
+>
+> Typical screenshot content:
+> - User login and registration pages
+> - Appointment list / detail views
+> - Admin panel and user management pages
+> - Postman API request/response examples
 
 ---
 
