@@ -329,31 +329,35 @@ Password: Admin123!
 
 ---
 
-## 📸 Screenshots
+## ?? Screenshots
 
-> The screenshot images are stored in the `screenshots/` folder.
+Add screenshots to the `screenshots/` folder and reference them below.
 
 ### UI Screenshots
 
 | Page | Screenshot |
 |---|---|
-| Home / Product Listing | `screenshots/product-listing.png` |
-| Product Details | `screenshots/product-details.png` |
-| Shopping Cart | `screenshots/cart.png` |
-| Checkout | `screenshots/checkout.png` |
-| My Orders | `screenshots/orders.png` |
+| Login | `screenshots/login.png` |
+| Register | `screenshots/register.png` |
+| User Dashboard | `screenshots/user-dashboard.png` |
+| Appointments List | `screenshots/appointments-list.png` |
+| Create Appointment | `screenshots/create-appointment.png` |
+| Appointment Details | `screenshots/appointment-details.png` |
+| Profile | `screenshots/profile.png` |
 | Admin Dashboard | `screenshots/admin-dashboard.png` |
-| Admin Products | `screenshots/admin-products.png` |
-| Admin Orders | `screenshots/admin-orders.png` |
+| Admin User Management | `screenshots/admin-users.png` |
+| Admin Appointment Management | `screenshots/admin-appointments.png` |
 
 ### API Testing (Postman)
 
 | Endpoint | Screenshot |
 |---|---|
-| POST /auth/login | `screenshots/api-login.png` |
-| GET /products | `screenshots/api-products.png` |
-| POST /orders | `screenshots/api-create-order.png` |
-| PATCH /orders/:id/status | `screenshots/api-update-status.png` |
+| `POST /auth/login` | `screenshots/api-login.png` |
+| `POST /auth/register` | `screenshots/api-register.png` |
+| `GET /appointments` | `screenshots/api-get-appointments.png` |
+| `POST /appointments` | `screenshots/api-create-appointment.png` |
+| `PATCH /appointments/:id/status` | `screenshots/api-update-appointment-status.png` |
+| `POST /upload` | `screenshots/api-upload-file.png` |
 
 
 ## 📝 Notes
