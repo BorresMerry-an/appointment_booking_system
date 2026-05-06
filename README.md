@@ -366,3 +366,4 @@ Add screenshots to the `screenshots/` folder and reference them below.
 - API is documented via Swagger at `/api/docs`
 - All routes are protected with JWT authentication
 - Admin seed user is created by the SQL schema
+
