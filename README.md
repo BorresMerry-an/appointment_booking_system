@@ -331,19 +331,30 @@ Password: Admin123!
 
 ## 📸 Screenshots
 
-> Add screenshots to the `/screenshots` folder and reference them below.
+> The screenshot images are stored in the `screenshots/` folder.
 
-## 📸 Screenshots
+### UI Screenshots
 
-> UI screenshots and API testing results (Postman) can be added to a `screenshots/` folder in the repository.
->
-> Typical screenshot content:
-> - User login and registration pages
-> - Appointment list / detail views
-> - Admin panel and user management pages
-> - Postman API request/response examples
+| Page | Screenshot |
+|---|---|
+| Home / Product Listing | `screenshots/product-listing.png` |
+| Product Details | `screenshots/product-details.png` |
+| Shopping Cart | `screenshots/cart.png` |
+| Checkout | `screenshots/checkout.png` |
+| My Orders | `screenshots/orders.png` |
+| Admin Dashboard | `screenshots/admin-dashboard.png` |
+| Admin Products | `screenshots/admin-products.png` |
+| Admin Orders | `screenshots/admin-orders.png` |
 
----
+### API Testing (Postman)
+
+| Endpoint | Screenshot |
+|---|---|
+| POST /auth/login | `screenshots/api-login.png` |
+| GET /products | `screenshots/api-products.png` |
+| POST /orders | `screenshots/api-create-order.png` |
+| PATCH /orders/:id/status | `screenshots/api-update-status.png` |
+
 
 ## 📝 Notes
 
